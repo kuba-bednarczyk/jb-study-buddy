@@ -29,23 +29,4 @@ export const users = [
     attendance: '23%',
     average: '1.4',
   },
-  {
-    name: 'Norbert Niewiadomski',
-    attendance: '90%',
-    average: '5.0',
-  },
-  {
-    name: 'Adam Rogult',
-    attendance: '45%',
-    average: '2.4',
-  },
-  {
-    name: 'Anna Jędrzejczyk',
-    attendance: '57%',
-    average: '2.4',
-  },
-  {
-    name: 'Paweł Ciemny',
-    average: '2.4',
-  },
 ];
