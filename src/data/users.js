@@ -29,4 +29,9 @@ export const users = [
     attendance: '23%',
     average: '1.4',
   },
+  {
+    name: 'Paweł Andrzejewski',
+    attendance: '90%',
+    average: '5.0',
+  },
 ];
