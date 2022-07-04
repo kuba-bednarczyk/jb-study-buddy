@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import UsersList from 'components/organisms/UsersList/UsersList';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from 'assets/styles/globalStyle';
+import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
 import { Wrapper } from './Root.styles';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Form from 'components/organisms/Form/Form';
 import { users as usersData } from 'data/users';
-import Navigation from 'components/organisms/Navigation/Navigation';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
+import AddUser from 'views/AddUser';
+import Dashboard from 'views/Dashboard';
 
 const initialFormState = {
   name: '',
@@ -25,6 +25,7 @@ const Root = () => {
   };
 
   const handleInputChange = (e) => {
+    console.log(formValues);
     setFormValues({
       ...formValues,
       [e.target.name]: e.target.value,
@@ -47,13 +48,17 @@ const Root = () => {
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Wrapper>
-          <Navigation />
-          <Routes>
-            <Route path="/add-user" element={<Form formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />} />
-            <Route path="/" exact element={<UsersList deleteUser={deleteUser} users={users} />} />
-          </Routes>
-        </Wrapper>
+        <MainTemplate>
+          <Wrapper>
+            <Routes>
+              <Route
+                path="/add-user"
+                element={<AddUser formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />}
+              />
+              <Route path="/" element={<Dashboard deleteUser={deleteUser} users={users} />} />
+            </Routes>
+          </Wrapper>
+        </MainTemplate>
       </ThemeProvider>
     </Router>
   );

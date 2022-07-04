@@ -1,59 +1,36 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
+  width: 100%;
   height: 100%;
-  width: 110px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-right: 1px solid ${({ theme }) => theme.colors.darkPurple};
-  background-color: ${({ theme }) => theme.colors.lightGrey};
   display: flex;
   flex-direction: column;
+  border-right: 1px solid ${({ theme }) => theme.colors.darkPurple};
   justify-content: flex-start;
+  padding: 30px 0;
 `;
 
 export const Logo = styled.div`
+  background-color: ${({ theme }) => theme.colors.darkGrey};
   width: 100%;
   height: 60px;
-  margin-top: 20px;
-  background-color: ${({ theme }) => theme.colors.darkGrey};
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-end;
-
+  align-items: center;
+  margin-bottom: 30px;
   h1 {
+    font-size: 15px;
     color: ${({ theme }) => theme.colors.white};
-    font-size: ${({ theme }) => theme.fontSize.l};
-    font-weight: bold;
-    line-height: 110%;
-    letter-spacing: 0.5px;
-    padding: 0 10px;
+    text-align: right;
+    margin-right: 20px;
   }
 `;
 
 export const StyledLink = styled(Link)`
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.darkGrey};
   text-decoration: none;
+  color: ${({ theme }) => theme.colors.darkGrey};
   text-align: right;
-  padding-right: 25px;
-
-  &:nth-child(2) {
-    margin-top: 50px;
-    margin-bottom: 10px;
-  }
-
-  &:not(:nth-child(2)) {
-    margin: 10px 0;
-  }
-
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.darkPurple};
-    transition: color 0.2s ease-in-out;
-  }
+  margin: 15px 20px 15px auto;
 `;
